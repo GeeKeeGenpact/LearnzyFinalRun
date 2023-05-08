@@ -11,7 +11,7 @@ const cors=require('cors')
 
 //middleware
 app.use(cors({
-  origin: ["http://localhost:3000", "https://learnzy-app.onrender.com"]
+  origin: ["http://localhost:3000", "https://learnzy.onrender.com"]
 }))
 
 app.use(express.json());
