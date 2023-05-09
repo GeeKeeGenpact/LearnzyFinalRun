@@ -31,6 +31,10 @@ const prospectSchema = new Schema(
       type: String,
       required: true,
     },
+    approve: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );

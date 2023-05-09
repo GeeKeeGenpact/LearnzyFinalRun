@@ -10,7 +10,7 @@ const getProspects = async (req, res) => {
 //create a prospect
 const createProspect = async (req, res) => {
   const { name, dob, gender, email, subject, experience, location } = req.body;
-
+  const approve = "no";
   try {
     const prospect = await Prospect.create({
       name,
@@ -20,6 +20,7 @@ const createProspect = async (req, res) => {
       subject,
       experience,
       location,
+      approve,
     });
     res.status(200).json(prospect);
   } catch (error) {
