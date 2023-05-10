@@ -10,18 +10,9 @@ const getStudents = async (req, res) => {
 
 //get a single student
 const getStudent = async (req, res) => {
-  const { id } = req.params;
-
-  if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(400).json({ error: "No such student" });
-  }
-
-  const student = await Student.findById(id);
-  if (!student) {
-    return res.status(400).json({ error: "No such student" });
-  }
-
-  res.status(200).json(student);
+  //const user_id=req.user._id
+  const students = await Student.find().sort({ createdAt: -1 });
+  res.status(200).json(students);
 };
 //update a student
 const updateStudent = async (req, res) => {

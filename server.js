@@ -16,7 +16,8 @@ app.use(cors({
 
 app.use(express.json());
 app.use((req, res, next) => {
-  console.log(req.path, req.method, req.body);
+  //console.log(req.path, req.method, req.body, req.headers);
+  //console.log(req.params, req.body, req.method)
   next();
 });
 

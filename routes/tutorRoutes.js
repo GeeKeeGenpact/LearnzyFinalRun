@@ -11,7 +11,7 @@ router.use(requireAuth)
 router.get('/', getTutors)
 
 //get a single tutor
-router.get('/:id', getTutor)
+router.get('/adminTutor', getTutor)
 
 //create a tutor
 router.post('/', createTutor)

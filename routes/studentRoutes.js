@@ -11,7 +11,7 @@ router.use(requireAuth)
 router.get('/', getStudents)
 
 //get a single student
-router.get('/:id', getStudent)
+router.get('/adminStudent', getStudent)
 
 //create a student
 router.post('/', createStudent)

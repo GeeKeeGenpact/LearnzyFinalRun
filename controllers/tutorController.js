@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Tutor = require("../models/tutorModel");
 
+
 //get all tutors
 const getTutors = async (req, res) => {
   const user_id = req.user._id;
@@ -10,18 +11,9 @@ const getTutors = async (req, res) => {
 
 //get a single tutor
 const getTutor = async (req, res) => {
-  const { id } = req.params;
-
-  if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(400).json({ error: "No such tutor" });
-  }
-
-  const tutor = await Tutor.findById(id);
-  if (!tutor) {
-    return res.status(400).json({ error: "No such tutor" });
-  }
-
-  res.status(200).json(tutor);
+  //const user_id = req.user._id;
+  const tutors = await Tutor.find().sort({ createdAt: -1 });
+  res.status(200).json(tutors);
 };
 //update a tutor
 const updateTutor = async (req, res) => {
